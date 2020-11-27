@@ -42,8 +42,8 @@ Following  the of Agile principles derived from software development, we intend 
 
 
 The Sardinia Radio Telescope is an observing facility managed by the Istituto Nazionale di Astrofisica (\href{http://www.inaf.it}{INAF}).  
-It is a 64-metre radio telescope, designed to operate  at  frequencies ranging from 300 Mhz to 116 GHz  [\citenum{2015JAI.....450008B}].
-It is a versatile telescope, covering a wide range of frequency, with a high agility of receiver switching. This  allows the telescope to be suitable for many scientific topic like pulsars, interstellar medium, astrochemistry, space weather[\citenum{prandoni}].
+It is a 64-metre radio telescope, designed to operate  at  frequencies ranging from 300 Mhz to 116 GHz  [\cite{2015JAI.....450008B}].
+It is a versatile telescope, covering a wide range of frequency, with a high agility of receiver switching. This  allows the telescope to be suitable for many scientific topic like pulsars, interstellar medium, astrochemistry, space weather[\cite{prandoni}].
 
 For 80\% of the time, SRT is operated by INAF, for  the remaining 20\% by Agenzia Spaziale Italiana (\href{http://www.asi.it}{ASI})  for probe tracking and deep space  activities. 
 Furthermore, SRT is part of  to the European Vlbi Network (\href{https://www.evlbi.org/}{EVN}), a network of telescope operating in Very-long baseline interferometric mode.
@@ -75,7 +75,7 @@ The SRT area covers about 140 000 m$^2$ and includes headquarters, a guesthouse,
 
 \section{Operations}
 Day to day operations are made of a continuous stack of actions which are mandatory  to maximize the effective time of the telescope and the support to the observers. Being an observing facility, all the activity concerning operations  are run to maximize the effective up-time of the telescope and its functionality at its best performances.
-SRT Operations are run by the operating team. The coordinator is the Head of Operations. 
+SRT Operations are run by the operating team. The coordinator is the Head of Operations, who as the role of Operation Manager. 
 Activities are divided in 10 Macro Work Packages which are organized in one or more packages:
 Table~\ref{tab:team_strutture} summarizes the structure of the team. 
 
@@ -119,18 +119,18 @@ Table~\ref{tab:team_strutture} summarizes the structure of the team.
 \rule[-1ex]{0pt}{3.5ex}     \multirow{1}{*}{Interface with ASI Operations}               & \rule[-1ex]{0pt}{3.5ex} Interface with ASI \\
 \hline
     \end{tabular}
-    \caption{Operations structure}
+    \caption{Operating Team is  organized in macro  work packages and work packages}
     \label{tab:team_strutture}
 \end{table}
 
-  \begin{figure} [ht]
+  \begin{figure} [!hb]
    \begin{center}
    \begin{tabular}{c} 
-   \includegraphics[width=\textwidth]{srt_wbs.png}
+   \includegraphics[width=\textwidth]{detailed_wbs.png}
 	\end{tabular}
 	\end{center}
    \caption[example] 
-   { \label{fig:wbs} SRT Operation breakdown.}
+   { \label{fig:wbs} Operations are grouped in maintenance, telescope issues, telescope upgrades and support to observations. Issues can refer to bugs, new features or supporting atcivities.}
 
    \end{figure} 
 Operations are grouped in maintenance, telescope issues, telescope upgrades and support to observations. The structure is outlined in Figure~\ref{fig:wbs}. 
@@ -151,7 +151,7 @@ Observations support starts just after a project is approved. First,  the telesc
 Kanban has origins from Toyota Production System (TPS) which is based on two pillars, the just-in-time production and autonomation. 
 These  concepts allow the implementation of a production system which is optimized in terms of sustainability, delivering only what is needed, 
 in the time that is needed.
-The other pillar is  the autonomation:  automation with human touch \citenum{tps}. 
+The other pillar is  the autonomation:  automation with human touch \cite{tps}. 
 
 \textit{Kanban} is one of the operational items of the TPS. Litterally, {\it kanban} means {\it cards}, which could represent  a piece of work. the production process is visualized  on a board where each stage of the process is represented. Moving the cards along each stage the flow of the process can be easily followed. 
 Usually, cards start from a {\it to do area}, crossing intermediate steps, getting to  {\it done}.
@@ -167,47 +167,48 @@ Usually, cards start from a {\it to do area}, crossing intermediate steps, getti
    \end{figure} 
  Only a limited number of cards can be put on the board. This puts a limit on the possible work in progress, allowing a news {\it to-do} card, only
  after another card get {done}, meaning that the task is done. In this way, the work in progress is limited, allowing only what is sustainable to proceed along the production line.
- Kanband  started with production processes, however, since then it has been applied to other fields in project management  like software development\citenum{brech15}. 
+ Kanband  started with production processes, however, since then it has been applied to other fields in project management  like software development\cite{brech15}. 
 Applied to software development, Kanban methodology follows the principles stated in the manifesto for Agile Software Development
-\footnote{http://agilemanifesto.org}   Generally,  Kanban is built for smooth and continuous delivery of customer value \citenum{brech15}.
+\footnote{http://agilemanifesto.org}   Generally,  Kanban is built for smooth and continuous delivery of customer value \cite{brech15}.
 
 
 \section{Kanban at SRT}
+
+
+
+\begin{figure} [!ht]
+   \begin{center}
+   \begin{tabular}{c} 
+   \includegraphics[width=0.9\textwidth]{kanbanboard.png}
+	\end{tabular}
+	\end{center}
+   \caption[example] 
+   { \label{fig:kanbansrt} SRT Operations Kanban  board. Cards flow from the leftmost column towards the \textit{done} one, when the issue is closed. Each cards contains tracking information, like due date, priority, and assignee.}
+
+   \end{figure} 
+
 There are two kind of issues that an operation manager has to deal with. First, there are issues which can be planned  in advance, like for example  maintenance periodicity and contracts. 
 Other issues can not be foreseen, like malfunctioning, failures, or bugs.
 
 Information concerning unpredictable issues could come from several sources: from a ticketing system opened by observers, sent by email or through the feedback form that observers are asked to fill.
 The operation manager has to check that all kind of issues are tracked and put to the attention of the operating team. 
 A project management software can help track the issue. To do this, we have been using Easy Redmine a commercial implementation of open source Redmine\footnote{\url{https://www.redmine.org/}}.  
-. 
 
 For each issue,  a \textit{task} is created with attributes defining  priority, due date and a possible assignment.
-Figure~\ref{fig:kanbansrt} shows the Kanban board of the whole project. 
+The Operation Manager inserts the task in the backlog. The backlog is the first column of the SRT  Kanban board which is  showed in Figure~\ref{fig:kanbansrt}. The other three columns are  \textit{in charge}, \textit{verification}, \textit{closed}.
 
-It consists of four columns: \textit{backlog}, \textit{in charge}, \textit{verification}, \textit{closed}.
+The backlog represents the\textit{ to-do list}. The card representing the task can give information about the priority, due date and assignment.
+The backlog can be sorted by priority. In Figure~\ref{fig:kanbansrt} is the left most column. The Operations Manager assigns the task and when the assignee starts the work, moves the card to the right, in the {in charge} column. Once the task is supposed to be completed, the assignee moves the card to \textit{verification}, where the issue is tested to verify if it is really  solved. If the issue is  related to a telescope failure, the role to check the verification is passed is in charge to the User Support, who has among his duties to assure the  telescope is at its performances. Otherwise, is the \textit{Site Manager} who leads the Site Management Macro Working Package to check the verification process is completed. At this point, the card is moved to \textit{done}, the rightmost column. 
 
-New tasks are inserted in the backlog. The backlog represents the\textit{ to-do list}. The card representing the task can give information about the priority, due date and assignment.
-The backlog can be sorted by priority. In Figure~\ref{fig:kanbansrt} is the left most column.
+After completion of the verification process, the card gets to the rightmost column. 
+This means that the process is  \textit{done} and the issue can be \textit{closed}.
 
-When a task is assigned and the assignee starts to work on it, the card is moved to {\it in charge}. 
-
-Then, the third column represents the  \textit{verification} stage. Here, the work related to the task is supposed to be completed, but during this stage the issue is tested to be really solved. For example, in case of issue relate to a telescope failure, the verification checks that the functionality is restored after the issue is solved. Beside this, the telescope performances have to be verified as well before passing the card  on.
-
-After completion of the verification process, the card gets to the rightmost column. This means that the process is  \textit{done} and the issue can be \textit{closed}.
-\begin{figure} [ht]
-   \begin{center}
-   \begin{tabular}{c} 
-   \includegraphics[width=\textwidth]{kanbanboard.png}
-	\end{tabular}
-	\end{center}
-   \caption[example] 
-   { \label{fig:kanbansrt} SRT Operation Kanban  board.}
-
-   \end{figure} 
+This is nearly the beginning of Kanban at SRT, in the next phase we will collect statistics about timings of the various phase, so that it will be possible to track the most used areas, the least staffed work packages and try to reduce downtime by reallocating resources.
 
 
 
 \section{Conclusions}
+
 With respect traditional waterfall tracking issues methods, Kanban improves the efficiency of running operations.
 From one hand, the Kanban board helps the manager and the team  visualize the flow of the process, concerning the issues. It can be possible to view at which stage is set each task, highlighting the bottlenecks.
 
